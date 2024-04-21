@@ -13,17 +13,26 @@ function changeSituation(name, situation) {
     if (planet) {
         planet.situation = situation;
     }
+    else {
+        alert("O planeta escolhido n\u00E3o est\u00E1 cadastrado");
+    }
 }
 function addSatelite(name, satelite) {
     var planet = planetList.find(function (planet) { return planet.name === name; });
     if (planet) {
         planet.satelites.push(satelite);
     }
+    else {
+        alert("O planeta escolhido n\u00E3o est\u00E1 cadastrado");
+    }
 }
 function removeSatelite(name, sateliteToRemove) {
     var planet = planetList.find(function (planet) { return planet.name === name; });
     if (planet) {
         planet.satelites = planet.satelites.filter(function (satelite) { return satelite !== sateliteToRemove; });
+    }
+    else {
+        alert("O planeta escolhido n\u00E3o est\u00E1 cadastrado");
     }
 }
 function showPlanets() {

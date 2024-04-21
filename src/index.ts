@@ -16,6 +16,8 @@ function changeSituation(name: string, situation: Situation) {
     let planet = planetList.find((planet) => planet.name === name);
     if (planet) {
         planet.situation = situation;
+    }else{
+        alert(`O planeta escolhido não está cadastrado`)
     }
 }
 
@@ -23,6 +25,8 @@ function addSatelite(name: string, satelite: string) {
     let planet = planetList.find((planet) => planet.name === name);
     if (planet) {
         planet.satelites.push(satelite);
+    }else{
+        alert(`O planeta escolhido não está cadastrado`)
     }
 }
 
@@ -30,6 +34,8 @@ function removeSatelite(name: string, sateliteToRemove: string) {
     const planet = planetList.find((planet) => planet.name === name);
     if (planet) {
         planet.satelites = planet.satelites.filter((satelite: string) => satelite !== sateliteToRemove);
+    }else{
+        alert(`O planeta escolhido não está cadastrado`)
     }
 }
 
